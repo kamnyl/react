@@ -5,6 +5,7 @@
     flex-wrap: wrap;
     gap: 30px;
     margin: 20px;
+    margin-bottom: 100px;
 }
 
 .card {
@@ -13,10 +14,11 @@
     flex-direction: column;
     justify-content: space-between;
     max-width: 250px;
+    height: 100%;
     padding: 20px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .card:hover {
@@ -44,25 +46,24 @@
 
 .card-text {
     font-size: 15px;
-    font-weight: 200; 
+    font-weight: 200;
 }
 
 .card-button {
-    background-color: #d8caac;
+    background-color: #f4b59c;
     color: #000000;
-    padding: 17px;
-    margin: 10px;
+    padding: 15px;
     border: none;
     border-radius: 5px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 12px;
-    letter-spacing: 2px;
+    letter-spacing: 5px;
     text-transform: uppercase;
     transition: 0.3s;
 }
 
 .card-button:hover {
-    background-color: #eaddc2;
+    background-color: #eeb8b8;
     transform: scale(1.1);
 }
 
@@ -70,13 +71,13 @@
 
 @media (max-width: 768px) {
     .card-container {
-      flex-wrap: wrap; 
-      justify-content: center;
+        flex-wrap: wrap;
+        justify-content: center;
     }
-  
+
     .card {
-      max-width: 90%; 
-      padding: 20px; 
+        max-width: 90%;
+        padding: 20px;
     }
 
     .card-img {
@@ -84,8 +85,8 @@
     }
 
     .card-button {
-      font-size: 20px; 
-      padding: 10px;
-      font-weight: 200;
+        font-size: 20px;
+        padding: 10px;
+        font-weight: 200;
     }
-  }
+}

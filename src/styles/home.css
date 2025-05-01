@@ -1,0 +1,18 @@
+.home-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
+.home-image {
+    max-width: 900px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .home-image {
+        max-width: 80%;
+        padding: 15px;
+    }
+}
