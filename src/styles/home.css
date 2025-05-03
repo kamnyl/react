@@ -12,7 +12,9 @@
 /* Responsive */
 @media (max-width: 768px) {
     .home-image {
-        max-width: 80%;
-        padding: 15px;
+        min-height: 400px; 
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
     }
 }

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Card from "../components/Card.jsx";
+import Popup from "../components/Popup.jsx"; 
 import bootstrap from "../assets/bootstrap.png";
 import responsive from "../assets/responsive.png";
 import genesis from "../assets/genesis.png";
@@ -8,14 +9,18 @@ import "../styles/portfolio.css";
 
 function Portfolio() {
   const [exploreProjects, setExploreProjects] = useState(false);
+  const [popupBox, setPopupBox] = useState(null); 
 
   const toggleProjects = () => setExploreProjects(prev => !prev);
+
 
   return (
     <>
       <div className="toggle-container">
         <img src={abstract} alt="Abstract pic" className="start-img" />
-        <p className="card-text">Here’s a selection of projects I created during my time at Sundsgården Folkhögskola. Along the way, I picked up a solid toolbox of web skills—including HTML, CSS, Figma, Git, GitHub, Sass, Bootstrap, JavaScript and React. </p>
+        <p className="card-text">
+          Here's a selection of projects I created during my time at Sundsgården Folkhögskola. Along the way, I picked up a solid toolbox of web skills—including HTML, CSS, Figma, Git, GitHub, Sass, Bootstrap, JavaScript and React.
+        </p>
         <button onClick={toggleProjects} className="toggle-button">
           {exploreProjects ? "Hide Projects" : "Explore Projects"}
         </button>
@@ -24,7 +29,10 @@ function Portfolio() {
       <div className="portfolio-section">
         {exploreProjects && (
           <div className="card-container">
-            <div>
+            <div onClick={() => setPopupBox({
+              popupTitle: "Bootstrap",
+              popupText: "I learned how to use Bootstrap's grid system and pre-built components to quickly create a responsive and visually appealing web page. I also gained a better understanding of how Bootstrap simplifies styling and layout, saving development time while maintaining consistency across devices."
+            })}>
               <Card
                 title="Bootstrap"
                 text="A project exploring Bootstrap to quickly build a responsive and styled web page using its component library and layout system."
@@ -34,7 +42,10 @@ function Portfolio() {
               />
             </div>
 
-            <div>
+            <div onClick={() => setPopupBox({
+              popupTitle: "Responsive",
+              popupText: "I learned how to recreate a website from a Figma design and make it responsive, meaning it looks good on both large screens and mobile devices. I also worked on building a functional hamburger menu that appears on smaller screens, making navigation easy and smooth for users on all devices."
+            })}>
               <Card
                 title="Responsive"
                 text="A responsive website recreated from a Figma design, focusing on responsive layouts and a functional hamburger menu."
@@ -44,7 +55,10 @@ function Portfolio() {
               />
             </div>
 
-            <div>
+            <div onClick={() => setPopupBox({
+              popupTitle: "CSS Grid",
+              popupText: "I learned how to use CSS Grid to create flexible and well-structured layouts across multiple pages, making the website responsive and easy to navigate. I also worked on building a form that users can fill out, even though it doesn't have a backend to process the data yet, which helped me understand how forms work in web development."
+            })}>
               <Card
                 title="CSS Grid"
                 text="A multi-page website where CSS Grid was used extensively to create flexible and structured layouts across three pages."
@@ -56,6 +70,13 @@ function Portfolio() {
           </div>
         )}
       </div>
+
+      {popupBox && (
+        <Popup
+          project={popupBox}
+          closePopup={() => setPopupBox(null)}
+        />
+      )}
     </>
   );
 }

@@ -43,7 +43,10 @@
     }
 
     .start-img {
-        max-width: 100%;
+        min-height: 400px; 
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
     }
 
     .toggle-button {

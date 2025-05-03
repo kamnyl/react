@@ -8,7 +8,6 @@ function Card(props) {
       <h2 className="card-title">{props.title}</h2>
       <p className="card-tools">{props.tools}</p>
       <p className="card-text">{props.text}</p>
-      <p className="card-text">{props.text2}</p>
       <a href={props.link} target="_blank" rel="noopener noreferrer">
       <button className="card-button">GitHub Repository</button></a>
     </div>

@@ -73,6 +73,7 @@
     .card-container {
         flex-wrap: wrap;
         justify-content: center;
+        row-gap: 50px;
     }
 
     .card {
